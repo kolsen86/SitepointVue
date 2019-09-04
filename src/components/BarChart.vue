@@ -13,11 +13,37 @@ export default {
                         backgroundColor: "#f25432",
                         pointBackgroundColor: "white",
                         borderWidth: 1,
-                        pointBorderColor: 
+                        pointBorderColor: "#249ebf",
+                        data: [40, 20, 30, 50, 90, 10, 20, 40, 50, 70, 90, 100]
                     }
                 ]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        },
+                        gridLines: {
+                            display: true
+                        }
+                    }],
+                    xAxes: [{
+                        gridLines: {
+                            display: false
+                        }
+                    }]
+                },
+                legend: {
+                    display: true
+                },
+                responsive: true,
+                maintainAspectRatio: false
             }
         }
+    },
+    mounted() {
+        this.renderChart(this.datacollection, this.options)
     }
 }
 </script>
